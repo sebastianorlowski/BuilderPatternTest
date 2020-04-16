@@ -13,6 +13,7 @@ public class main {
         String login = scanner.next();
         String email = scanner.next();
         Integer age = scanner.nextInt();
+        System.out.println("Lelelele");
         Gender gender = Gender.valueOf(scanner.next());
 
         User user = new User.Builder().setId(id)
