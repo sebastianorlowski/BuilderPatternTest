@@ -1,4 +1,5 @@
 public class User {
+    private Long id;
     private String name;
     private String lastName;
     private String login;
@@ -6,7 +7,8 @@ public class User {
     private Integer age;
     private Gender gender;
 
-    public User(String name, String lastName, String login, String email, Integer age, Gender gender) {
+    public User(Long id, String name, String lastName, String login, String email, Integer age, Gender gender) {
+        this.id = id;
         this.name = name;
         this.lastName = lastName;
         this.login = login;
@@ -28,6 +30,7 @@ public class User {
     }
 
     public static class Builder {
+        private Long id;
         private String name;
         private String lastName;
         private String login;
@@ -37,6 +40,11 @@ public class User {
 
         public Builder() {
 
+        }
+
+        public Builder setId(Long id) {
+            this.id = id;
+            return this;
         }
 
         public Builder setName(String name) {
@@ -70,7 +78,7 @@ public class User {
         }
 
         public User build() {
-            return new User(name, lastName, login, email, age, gender);
+            return new User(id, name, lastName, login, email, age, gender);
         }
     }
 }
